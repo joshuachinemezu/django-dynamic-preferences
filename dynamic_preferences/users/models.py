@@ -9,8 +9,10 @@ class UserPreferenceModel(PerInstancePreferenceModel):
 
     instance = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-
+    is_public = models.BooleanField(default=True)
+    
     class Meta(PerInstancePreferenceModel.Meta):
         app_label = 'dynamic_preferences_users'
         verbose_name = _("user preference")
         verbose_name_plural = _("user preferences")
+        db_table = 'user_preferences'

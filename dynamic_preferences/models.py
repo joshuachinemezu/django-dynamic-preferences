@@ -83,6 +83,7 @@ class GlobalPreferenceModel(BasePreferenceModel):
 
         verbose_name = _("Global preference")
         verbose_name_plural = _("Global preferences")
+        db_table = 'configurations'
 
 
 class PerInstancePreferenceModel(BasePreferenceModel):
